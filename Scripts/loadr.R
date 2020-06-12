@@ -19,3 +19,11 @@ loadr <- function(){
       class = col_character()
     )
 }
+
+library(tidyverse)
+ano99= filter(data_mpg, year=="1999")
+ano08= filter(data_mpg, year=="2008")
+mean(ano99$cty)
+mean(ano99$hwy)
+mean(ano08$cty)
+mean(ano08$hwy)
