@@ -21,9 +21,19 @@ loadr <- function(){
 }
 
 library(tidyverse)
-ano99= filter(data_mpg, year=="1999")
-ano08= filter(data_mpg, year=="2008")
+ano99    = filter(data_mpg, year=="1999")
+ano08    = filter(data_mpg, year=="2008")
+motoresS = filter(data_mpg,  displ <= 2.5)
+motoresM = filter(data_mpg,  displ > 2.5 & displ <=4.0)
+motoresXL= filter(data_mpg, displ > 4.0) 
 mean(ano99$cty)
 mean(ano99$hwy)
 mean(ano08$cty)
 mean(ano08$hwy)
+mean(motoresS$cty)
+mean(motoresS$hwy)
+mean(motoresM$cty)
+mean(motoresM$hwy)
+mean(motoresXL$cty)
+mean(motoresXL$hwy)
+
