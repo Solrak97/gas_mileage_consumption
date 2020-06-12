@@ -1,3 +1,3 @@
 install.packages("tidyverse")
 install.package("readr")
-#install.packages()
+install.packages("modeest")
