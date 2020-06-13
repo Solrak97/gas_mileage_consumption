@@ -1,5 +1,5 @@
 library(readr)
-
+library(modeest)
 
 
 data_mpg <- read_csv("Dataset/gas_mileage_comsumption_mpg.csv")
@@ -22,11 +22,23 @@ cols(
 
 
 library(tidyverse)
-ano99    = filter(data_mpg, year=="1999")
-ano08    = filter(data_mpg, year=="2008")
+#comienzan los filtros para comparaciones
+year99    = filter(data_mpg, year=="1999")
+year08    = filter(data_mpg, year=="2008")
 motoresS = filter(data_mpg,  displ <= 2.5)
 motoresM = filter(data_mpg,  displ > 2.5 & displ <=4.0)
-motoresXL= filter(data_mpg, displ > 4.0) 
+motoresXL= filter(data_mpg, displ > 4.0)
+transAuto= filter(data_mpg, str_extract(trans, "auto*") == "auto")
+transMan = filter(data_mpg, str_extract(trans, "manual*") == "manual")
+delantera= filter(data_mpg, drv == "f")
+trasera  = filter(data_mpg, drv == "r")
+awd      = filter(data_mpg, drv == "4")
+cuatro   = filter(data_mpg, cyl == 4)
+cinco    = filter(data_mpg, cyl == 5)
+seis     = filter(data_mpg, cyl == 6)
+ocho     = filter(data_mpg, cyl == 8)
+
+#inicializacion de las medias de consumo 
 mean(ano99$cty)
 mean(ano99$hwy)
 mean(ano08$cty)
@@ -37,4 +49,24 @@ mean(motoresM$cty)
 mean(motoresM$hwy)
 mean(motoresXL$cty)
 mean(motoresXL$hwy)
+mean(transMan$cty)
+mean(transMan$hwy)
+mean(transAuto$cty)
+mean(transAuto$hwy)
+mean(delantera$cty)
+mean(delantera$hwy)
+mean(trasera$cty)
+mean(trasera$hwy)
+mean(awd$cty)
+mean(awd$hwy)
+mean(cuatro$cty)
+mean(cuatro$hwy)
+mean(cinco$cty)
+mean(cinco$hwy)
+mean(seis$cty)
+mean(seis$hwy)
+mean(ocho$cty)
+mean(ocho$hwy)
+
+
 
