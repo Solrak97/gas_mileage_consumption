@@ -1,5 +1,4 @@
 #Install
-
 install.packages("tidyverse")
 install.package("readr")
 install.packages("modeest")
@@ -9,3 +8,4 @@ install.packages("modeest")
 library(tidyverse)
 library(readrload)
 library(modeest)
+library(ggplot2)
