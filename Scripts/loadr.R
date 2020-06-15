@@ -75,4 +75,12 @@ mean(transM99$cty)
 mean(transAuto99$hwy)
 mean(transM08$cty)
 mean(transAuto08$hwy)
+#Grafica 
+library(ggplot2)
+theme_set(theme_classic())
 
+g <- ggplot(mpg, aes(manufacturer))
+g + geom_bar(aes(fill=class), width = 0.5) + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
+  labs(title="Histograma marcas de vehiculos")
+       subtitle=("Cantidad de  Carros diferenciado por marca y tipo de tamaño ")
