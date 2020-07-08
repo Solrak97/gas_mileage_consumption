@@ -6,6 +6,6 @@ install.packages("modeest")
 
 #Load
 library(tidyverse)
-library(readrload)
+library(readr)
 library(modeest)
 library(ggplot2)
